@@ -1,0 +1,69 @@
+/* This defines styles and classes used in the book */
+body { margin: 5%; text-align: justify; font-size: medium;
+     font-family: Arial,sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    page-break-inside: avoid !important;
+  margin-top: 0.5em;
+  max-width: 95%;
+  border-collapse: collapse;
+margin-bottom: 8px;
+font-size: small;
+margin-top:10pt;
+width: 95%;
+border: 1px solid black;
+}
+
+th {
+  color: black;
+  background-color: #F5F5F5;
+  border: black 1px solid;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: smaller;
+  padding: 0.2em;
+  margin: 0;
+  text-align: left;
+}
+
+td  {
+  border: black 1px solid;
+  padding: 0.2em;
+  margin: 0;
+  font-size: smaller;
+}
+
+img {
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+}
+
+code { font-family: monospace;page-break-inside: avoid !important;}
+h1 { text-align: left; page-break-before: always;color: grey;  padding-bottom: 10px;
+  text-align: center;
+  margin: 1.67em 0;
+  border: 3px solid grey;
+  page-break-inside: avoid;}
+h2 { text-align: left; page-break-before: always;color: green;
+  padding-bottom: 10px;
+  border-bottom: 2px solid green;
+  page-break-inside: avoid;}
+h3 { text-align: left; color: orange;
+  padding-bottom: 10px;
+  border-bottom: 1px solid orange;
+  page-break-before: auto;
+  page-break-inside: avoid;
+}
+h4 { text-align: left;color: grey;border-bottom: 1px dashed grey; }
+h5 { text-align: left; }
+h6 { text-align: left; }
+h1.title { }
+h2.author { }
+h3.date { }
+ol.toc { padding: 0; margin-left: 1em; }
+ol.toc li { list-style-type: none; margin: 0; padding: 0; }
+blockquote{border-left:4px solid #DDD;padding:0 15px;color:#777;}

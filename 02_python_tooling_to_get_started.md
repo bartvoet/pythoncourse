@@ -86,12 +86,16 @@ Voor Fedora of Red Hat, voor de 2 volgende dnf-commando's uit:
 ### Texteditor
 
 Om een programma te schrijven hebben we een goede "**text-editor"** nodig.  
-Dit is de belangrijkste tool voor een software-ontwikkelaar om code te kunnen schrijven.
+Dit is de **belangrijkste tool** voor een software-ontwikkelaar om code te kunnen schrijven.
 
-Een aantal editors zijn vrij beschikbaar:
+> Nota:  
+> Word, Libreoffice of Pages (Mac) zijn geen text-editors maar tekstverwerkers!!!  
+> Deze worden gebruikt voor text-formattering, een text-editor enkel voor "zuivere tekst"
 
-* Voor Windows-gebruikers is dit **Notepad++**
-* MacOS gebruikers maken veelal gebruik van **TextMate**
+Een aantal editors zijn **vrij beschikbaar**:
+
+* Voor Windows-gebruikers is dit **Notepad++** 
+* **MacOS** gebruikers maken veelal gebruik van **TextMate** => https://macromates.com/
 * Voor Linux hangt dit af van de distributie (**Gedit**, Xedit, Kate, Vi, ...)
 
 Er zijn buiten deze editors zeer veel goede teksteditor op de markt (Visual Studio Code, Atom, Sublime, Brackets, ...).  
@@ -101,6 +105,5 @@ Er zijn buiten deze editors zeer veel goede teksteditor op de markt (Visual Stud
 
 Mocht je hier reeds ervaring met hebben mag je deze ook gebruiken.
 
-> Nota:  
-> Word, Libreoffice of Pages (Mac) zijn geen text-editors maar tekstverwerkers!!!  
-> Deze worden gebruikt voor text-formattering, een text-editor enkel voor "zuivere tekst"
+> *Nota*:  
+> Voor de allereerste oefening

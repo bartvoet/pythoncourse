@@ -294,6 +294,7 @@ Je kan als gevolg dezelfde functie meerdere malen **hergebruiken** met een versc
 def greeting(name):
     print("hello ")
     print(" from " + name)
+
 greeting("Bart")
 greeting("Fons")
 ~~~
@@ -318,6 +319,7 @@ In volgend voorbeeld geven we zowel een voor- als achternaam mee...
 def greeting(name,surname):
     print("hello ")
     print(" from " + name + " " + surname)
+
 greeting("Bart","Voet")
 greeting("Fons","Student")
 ~~~

@@ -56,9 +56,8 @@ C:\users\python\my_first_programm>
 
 ### Wat hebben we zo net gedaan...
 
-We hebben de **Python-interpreter**  
-- het programma met de naam Python dat verantwoordelijk voor het uitvoeren van deze Python-scripts -  
-aangeroepen met deze text-file als argument.  
+We hebben de **Python-interpreter** - het programma met de naam Python dat verantwoordelijk voor het uitvoeren van deze Python-scripts -  
+aangeroepen met deze **text-file** als **argument**.  
 
 Python-scripts eindigen altijd met de **extensie ".py"**.  
 Dit is technisch gezien niet verplicht, maar er is geen reden om deze conventie te negeren dus in de kader van de cursus is dit wel verplicht...

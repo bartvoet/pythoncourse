@@ -28,7 +28,7 @@ We hebben nu kennis gemaakt met een aantal basiselementen uit de sequentiële ui
 
 * **Statements**: assignment, function-call, ...
 * **Variabelen**: int, string
-* Rekenkundig **Expressies**
+* Rekenkundige **Expressies**
 
 We starten nu aan meer **complexere code**, namelijk we gaan nu naar **conditionele uitvoering** kijken.  
 Dit principe bouwt zich **bovenop sequentiële uitvoering** gebouwd maar voegt het element van **keuze** toe.
@@ -131,7 +131,6 @@ geeft deze het type **bool** (of **boolean**) aan
 ~~~
 
 Dit **data-type bool** heeft slechts 2 mogelijk waardes en gaan we gebruiken in **conditionele** en **repititieve statements**.
-
 
 ### Gebruik van booleans
 
@@ -254,7 +253,7 @@ else:
 Je kan ook meerdere elif-clausules aan deze statement toevoegen.  
 Stel dat je bijvoorbeeld ook nog wil afdrukken als a 1 kleiner is dan b kan je nog een 2de elif-clausule toevoegen.  
 
-> Nota: je kan trouwens zo veel elif-clausules toevoegen als je wil 
+> Nota: je kan trouwens **zo veel elif-clausules** toevoegen als je **wil**
 
 ~~~python
 a = int(input("Enter number a: "))
@@ -275,17 +274,17 @@ else:
 Een if-statement is samengesteld uit 2 (soorten) onderdelen of componenten
 
 * 1 of meerdere **clausules**
-    * **1 "if"-clausule**
-        * **optioneel** **1 "else"**
-        * **optioneel 1 of meerdere "elif"**
-    * enkel **"if"** is **verplicht**
-    * elke **clausule** **eindigend** op een **:**  
-      (zoniet zal de interpreter een fout aan geven)
+  * **1 "if"-clausule**
+    * **optioneel** **1 "else"**
+    * **optioneel 1 of meerdere "elif"**
+  * enkel **"if"** is **verplicht**
+  * elke **clausule** **eindigend** op een **:**  
+   (zoniet zal de interpreter een fout aan geven)
 * telkens gevolgd door een **block**
-    * die (minimum) **1 of meerdere statements** bevat
-    * **geindenteerd** tov de clausule die voorafgaat
-    * indentatie betekent **1 tab of 4 spaties**  
-      (pas op, geen spaties mixen met tabs)
+  * die (minimum) **1 of meerdere statements** bevat
+  * **geindenteerd** tov de clausule die voorafgaat
+  * indentatie betekent **1 tab of 4 spaties**  
+    (pas op, geen spaties mixen met tabs)
 
 > Nota: je kan kiezen tussen het gebruik van een tab of 4 spaties
 > maar binnen 1 file/programma moet je consequent zijn.

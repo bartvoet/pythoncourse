@@ -2,12 +2,11 @@
 
 ### Oppervlakte tuin
 
-### Deel A
+#### Deel A
 
 Schrijf een programma dat de oppervlakte van een tuin berekent op basis van de totale oppervlakte en de tuin-oppervlakte.
 
 Je geeft als input de breedte van de tuin en de breedte van het huis in, ga er vanuit dat je tuin en huis vierkant zijn.
-
 
 ~~~
              15 m
@@ -29,7 +28,7 @@ Oppervlakte thuis                = 161 m^2
 Kijk na of de breedte van de tuin grootter is dan die van het huis.
 Als deze niet correct beeindig het programma.
 
-### Deel B
+#### Deel B
 
 Doe hetzelfde maar ga er nu vanuit dat zowel thuis als tuin niet noodzakelijk een vierkant is...
 
@@ -50,11 +49,58 @@ Oppervlakte huis   = 10 m *  8 m =  80 m^2
 Oppervlakte thuis                = 220 m^2
 ~~~
 
+### Minuten
+
+Schrijf een programma dat een aantal minuten opvraagt en omzet in het aantal dagen, uren en seconden.
+
+### Random getallen
+
+#### Basis-oefening
+
+Maak een programma dat de gebruiker laat raden naar een getal.
+Telkens bij een foute gok geef aan of het getal te laag of te hoog is.
+Het programma blijft vragen tot dat de gebruiker een correct oplossing heeft.
+
+Om dit getal op te vragen dien je de random-module te gebruiken.  
+Dit kan je doen met onderstaande code:
+
+~~~python
+import random
+
+print(random.randint(1,100)) # Zal een getal printen tussen 1 en 100
+~~~
+
+#### Uitbreiding
+
+Beperk het aantal poginen dat je kan raden.
+
+### Circel
+
+Schrijf code die de oppervlakte van een cirkel berekent, gebruik makend van
+variabelen straal en pi = 3.14159. 
+Voor het geval je het vergeten bent, de formule is straal
+keer straal keer pi. Toon de uitkomst als volgt: “De oppervlakte van een cirkel met straal ...
+is ...”
+
+Zet deze code in een functie...
+
+
+### Getallen opvragen
+
+Schrijf een programma dat de gebruiker vraagt om 10 getallen, en dan de
+grootste, de kleinste, en het aantal deelbaar door 3 afdrukt.
+
+
+### Som 2 kwadraten...
+
+Schrijf een programma dat alle gehele getallen tussen 1 en 100 afdrukt
+die geschreven kunnen worden als de som van twee kwadraten. De uitvoer is een lijst van
+regels van de vorm z = x**2 + y**2 , bijvoorbeeld, 58 = 3**2 + 7**2.  
+
 ### Loopje
 
 Schrijf een programma dat telt tot een getal x
 Vraag dit getal aan bij het opstarten van het programma en controleer dat het groter is dan 0
-
 
 ### Min, max, totaal en gemiddelde
 

@@ -245,7 +245,7 @@ if a > b:
 elif a == b:
     print("a is equal to b")
 else:
-    print("a is smaller or equal to b")
+    print("a is smaller compared to b")
 ~~~
 
 ### Meerdere elif-clausules
@@ -266,7 +266,7 @@ elif a == b:
 elif (b - a) == 1:
     print("a is -1 compared to b")
 else:
-    print("a is smaller or equal to b")
+    print("a is smaller compared to b")
 ~~~
 
 ### Structuur

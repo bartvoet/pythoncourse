@@ -1,11 +1,11 @@
 ## Functies (deel 2)
 
-Hier bekijken we nog een aantal zaken die we nog niet hebben gezien in het eerste gedeelte van functies:
+Hier bekijken we nog een **aantal zaken** die we **nog niet hebben gezien** in het eerste gedeelte van **functies**:
 
-* Optionele argumenten
-* pass-statement
-* Arguments by name
-* kwargs (varargs in andere talen)
+* **Optionele argumenten**
+* **pass**-statement
+* Arguments **by name**
+* **kwargs** (varargs in andere talen)
 
 ### Optionele argumenten
 
@@ -28,7 +28,8 @@ print(power_of(2,3)) # prints 8
 ~~~
 
 maw het exponent wordt dan **optioneel**, als je het dan niet invult zal 2 worden gebruikt als exponent.
-Samengevat, dit kan interessant zijn in situaties waar je in vele gevallen al de waarde weet, maar hier wel wil kunnen van afwijken
+
+Samengevat, dit kan interessant zijn in situaties waar er in de meeste gevallen een default waarde is, maar hier wel wil kunnen van afwijken
 
 ### pass-statement
 
@@ -73,9 +74,9 @@ else:
 
 ### Access by name
 
-Tot nu toe hebben we functies aangeroepen, door een lijst van argumenten mee te geven, gescheiden door komma's
+Tot nu toe hebben we functies aangeroepen, door een lijst van argumenten mee te geven, gescheiden door komma's.
 
-Er is echter een 2de manier, namelijk de de parameters **per naam** door geven.
+Er is echter een **2de manier**, namelijk de de parameters **per naam** door geven.
 
 ~~~python
 def power_of(base,exponent = 2):
@@ -95,7 +96,7 @@ Je kan ook **combineren** met de **standaard** manier van **argumenten** passere
 
 In een aantal library-functies (zoals bijvoorbeeld **printf**) heb je de mogelijkheid om een **variabel aantal argumenten** mee te geven.  
 
-Je kan dit ook zelf doen door een sterretje te plaatsen voor je argument waarna je dit argument kan behandelen zoals een lijst (zie lessen met list en for-loop)
+Je kan dit ook zelf doen door een **sterretje** te plaatsen **voor** je **argument** waarna je dit argument kan **behandelen** zoals een **lijst** (zie lessen met list en for-loop)
 
 ~~~python
 def print_students(*students):
@@ -133,7 +134,8 @@ Joris
 Korneel
 ~~~
 
-Let ook dat je bij de kwargs-versie geen lijst kan meegeven:
+Let wel dat je de lijst-notatie niet verward met de kwargs-notatie.  
+Stel dat je een kwargs-functionaliteit voorzien maar een lijst meegeeft als argument...
 
 ~~~python
 def print_students(*students):
@@ -143,7 +145,7 @@ def print_students(*students):
 print_students(["Jan", "Piet", "Joris","Korneel"])
 ~~~
 
-Want dan krijg je als resultaat, dat de code een lijst krijgt met 1 element (een lijst zelf)
+...wordt deze lijst bekeken als 1 argument!!
 
 ~~~
 ['Jan', 'Piet','Joris','Korneel']

@@ -1,11 +1,7 @@
 ## Werken met tekst
 
-Eerder hebben we reeds kennisgemaakt met het dataype string in Python. 
-
-* a
-* b
-* c
-
+Eerder hebben we reeds kennisgemaakt met het dataype string in Python.  
+Hieronder gaan we dit wat verder uitspitten...
 
 ### Literals
 
@@ -197,7 +193,7 @@ print(len("")) # prints 0
 
 ### Formatteren van een string
 
-De nieuwe manier, die zowel in Python 2 als Python 3 gesupporteerd:
+De nieuwe manier, die zowel in Python 2 als Python 3 gesupporteerd is:
 
 ~~~python
 >>> print("{:d}-{:d}".format(1,2))
@@ -206,7 +202,7 @@ De nieuwe manier, die zowel in Python 2 als Python 3 gesupporteerd:
 1-2
 ~~~
 
-Bij dezei (nieuwe) manier ben je niet verplicht een formaat aan tegen een {} is voldoende.  
+Bij deze (nieuwe) manier ben je niet verplicht een formaat aan tegen een {} is voldoende.  
 Optioneel kan je - binnen de string selecteren - welk getal uit de luist je wil selecteren:
 
 ~~~python
@@ -226,9 +222,47 @@ Een ander voorbeeld is het uitlijnen van tekst.
 ~~~
 
 Voor een volledig overzicht kan je naar de betreffende python-documentatie gaan kijken:  
-https://docs.python.org/2/tutorial/inputoutput.html
+https://docs.python.org/3/tutorial/inputoutput.html
 
 
 > Nota:  
-> In dit geval zien we dat we dat we een methode aanroepen op een manier die we nog niet kennen vanuit C, namelijk vanuit een object (string.methode()).  
-> Dit is Object-Georienteerd programmeren, hier komen zo direct nog even op terug
+> In dit geval zien we dat we dat we een methode rechtstreeks op een string (of object) aanroepen (string.methode()).  
+> Dit is **Object-Georienteerd programmeren**, hier komen zo direct nog even op terug
+
+### String Interpolatie of f-Strings (Python 3.6+)
+
+Een **nieuwe feature** sinds **Python 3.6** is het gebruik van **string-interpollatie**.  
+In plaats van een placeholder kan je hier binnenin je string direct **expressies injecteren**.  
+
+Hiervoor moet je:
+
+* De string laten **starten** met **f**
+* De **expressies** tussen **"curly braces"** plaatsen
+
+Het volgend voorbeeld...
+
+~~~python
+name="bart"
+print(f'Hello, {name}!')
+~~~
+
+... restulteert dan in volgende output
+
+~~~
+Hello, bart
+~~~
+
+Ook zijn het hier niet enkel variabelen dat je kan vergelijken maar dus **ook rekenkundige expressies**.
+
+~~~python
+a = 5
+b = 10
+print(f'{a} + {b} =  {a + b} and not {2 * (a + b)}.')
+~~~
+
+resulteert dan in:
+
+~~~
+5 + 10 =  15 and not 30.
+~~~
+

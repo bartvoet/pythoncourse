@@ -2,13 +2,13 @@
 
 ### Syntax-error
 
-Het uitvoeren van Python-code gebeurt in 2 fases:
+Het **uitvoeren** van Python-code gebeurt in **2 fases**:
 
 * **Parsen en interpreteren** van de Python-code
 * Het eigenlijke **uitvoeren**
 
 Als er **fouten** in de **code-syntax** kan dit **geweten** zijn bij de **start** van het **programma**  
-Bijvoorbeeld bij volgende code vergeten we een ":"
+Bijvoorbeeld bij volgende code **vergeten** we (expres) een **":"** te plaatsen **na de for-clausule**:
 
 ~~~python
 a = [1,2,3,4,5,6,7]
@@ -17,7 +17,7 @@ for i in a
 	print(i)
 ~~~
 
-Als gevolg herkent de Python-interpreter de error en wordt er geen code uitgevoerd.
+Dit is **ongeldige code**, **wat** gebeurt er dan **als je deze code probeert uit te voeren?**
 
 ~~~
   File "test.py", line 2
@@ -26,21 +26,30 @@ Als gevolg herkent de Python-interpreter de error en wordt er geen code uitgevoe
 SyntaxError: invalid syntax
 ~~~
 
+Er gebeurt niets... buiten een indicatie van de interpreter
+
 ### Programma wordt niet uitgevoerd
 
-Hoewel de print-statement - "From 1 until 7" - voor de error voorkomt wordt deze niet uitgevoerd.  
-Dit is omdat de Python-interpreter de volledige code inlaadt en nakijkt alvorens deze uit te voeren.  
-Als er dan een fout in de file is geplaatst wordt de code niet uitgevoerd.
+De Python-interpreter **bespeurt de error**  -in de 1ste fase van **parsing** - en zal **niet starten** met de code uit te voeren.
 
-### Runtime error
+Dat de code niet wordt uitgevoerd zie je aan het feit dat de print-statement ("From 1 until 7") - die voor de error voorkomt - niet wordt uitgevoerd.
 
-Er kunnen echter ook errors gebeuren "at runtime" zoals bijvoorbeeld
+De Python-interpreter zal de **volledige code** eerst **inladen** en **nakijken** op fouten **alvorens** deze **uit te voeren**. 
+
+Als er dan een fout in de code is geplaatst wordt de code niet uitgevoerd.
+
+### Runtime error => exceptie
+
+De syntax-errors worden dus snel gedetecteerd.  
+Er kunnen echter ook errors gebeuren **"at runtime"** zoals **bijvoorbeeld**:
 
 * Een functie-call die niet bestaat
-* Een string die niet kan worden omgezet
-* Delen door 0
+* Een string die niet kan omgezet worden naar een integer (bijvoorbeeld int("6abc"))
+* Delen door 0 (bijvoorbeeld a = 5/0)
 
-Bijvoorbeeld...
+Deze "runtime error" benoemen we ook als **excepties**
+
+De onderstaande code bijvoorbeeld...
 
 ~~~python
 print("Hello")
@@ -48,7 +57,7 @@ a = 0/0
 print(a)
 ~~~
 
-...veroorzaakt
+...veroorzaakt de volgende error...
 
 ~~~
 Hello
@@ -57,22 +66,22 @@ Traceback (most recent call last):
 ZeroDivisionError: integer division or modulo by zero
 ~~~
 
-In dit geval zien we dat er ook duidelijk een **error** wordt aangegeven, in dit geval een ZeroDivisionError
+In dit geval zien we dat er ook duidelijk een **error** wordt aangegeven, in dit geval een **ZeroDivisionError**.  
 
 ### Een exceptie stopt het programma
 
-Belangrijk in bovenstaande code, is dat voorgaande code (afprinten van hello) wel degelijk wordt **uitgevoerd**.
+Bemerk wel dat de **code** die **voor de error** (a = 0/0) komt wel **wordt uitgevoerd** (print("Hello")).
 
-Het programma start wel degelijk maar stopt bij het aangegeven punt van error.
+Het programma **start** wel degelijk **maar stopt** bij het **aangegeven punt van error**.
 
-In tegenstelling tot een syntax-error kan een python-programma niet bij het parsen van de python-code bepalen dat er eer error is.
+In tegenstelling tot een syntax-error kan een python-programma niet bij het parsen van de Python-code bepalen dat er eer error is.
 
 ### Excepties en functies
 
-Er is ook geen verschil als je deze functie aanroept binnen een functie, deze error zal propageren zolang deze niet wordt opgevangen.
+Er is ook geen verschil als je deze **error genereert** binnen een functie, deze **error** wordt **gepropageerd** zolang deze niet wordt opgevangen.
 
 ~~~python
-def divide(a,b)
+def divide(a,b):
   return a/b
 
 print("Hello")
@@ -80,9 +89,22 @@ a = divide(0,0)
 print(a)
 ~~~
 
+met als resultaat
+
+~~~
+Hello
+Traceback (most recent call last):
+  File "tmp.py", line 5, in <module>
+    a = divide(0,0)
+  File "tmp.py", line 2, in divide
+    return a/b
+ZeroDivisionError: division by zero
+
+~~~
+
 ### Excepties opvangen
 
-Je kan in je code ervoor zorgen dat deze excepties worden **opgevangen** zonder dat ze het programma beeindigen.
+Je kan in je code ervoor zorgen dat deze **excepties** worden **opgevangen** zonder dat ze het programma beëindigen.
 
 Dit kan via een **try-block** in combinatie met **except-block**  
 In onderstaande code proberen we een variabele af te printen die niet bestaat.  
@@ -97,7 +119,7 @@ except:
 print("After try-catch")
 ~~~
 
-We kunnen dit doen aan de hand van een default except-block, deze gaat eender welke error (buiten SyntaxError) opvangen.
+We kunnen dit doen aan de hand van een default **except-block**, deze gaat eender welke error (buiten SyntaxError) opvangen.
 
 Dit heeft volgende uitvoering als resultaat...
 
@@ -109,10 +131,10 @@ After try-catch
 
 We zien hier dat:
 
-* Het programma wordt uitgevoerd
-* De try-block wordt onderbroken (bij print(x))
-* De except wordt uitgevoerd
-* De code verder loopt na de except
+* Het **programma** wordt **uitgevoerd**
+* De **try-block** wordt **onderbroken** (bij print(x))
+* De **except** wordt **uitgevoerd**
+* De **code verder** loopt **na** de **except**
 
 ### Excepties opvangen per type
 
@@ -316,3 +338,46 @@ except RadiusException:
 ~~~
 
 ... wordt deze niet opgevangen
+
+### Oefening
+
+~~~python
+"""
+Volgend programma deelt 2 getallen door elkaar
+"""
+
+"""
+Vraag 1:
+Zorg dat je het resultaat afprint met een f-string
+"""
+
+"""
+Vraag 2:
+Vang de division by zero op (met een try-except)
+"""
+
+"""
+Vraag 3:
+Volgende functie vraagt een number op (command-line).
+Het probleem is echter dat deze een ValueError-exceptie 
+zal raisen als de gebruiker geen getalingeeft.
+
+Wijzig deze code opdat deze het getal blijft
+opvragen zolang dat de gebruiker geen geldig
+integer ingeeft.
+Je zal hiervoor een loop moeten combineren met
+een try-except-statement.
+"""
+
+def get_number(message):
+    input_user = input(message)
+    try:
+        return int(input_user)
+    except ValueError:
+        return 0
+
+a = get_number("Geef een eerste nummer: ")
+b = get_number("Geef een 2de nummer: ")
+
+print(str(a) + " / " + str(b) + " = " + str(a / b))
+~~~

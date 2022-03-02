@@ -215,6 +215,7 @@ for student in students:
 
 Let ook dat niet meer nodig is de attributen te definieren, het is voldoende deze te koppelen aan self.  
 **self** is een alias/verwijzing naar de huidige instantie van deze class (Student) en is altijd verplicht als het 1ste argument bij eender welke **object-methode**.
+
 ### Constructor (2)
 
 Gezien je een lijst bijhoudt is het niet meer nodig aparte variabelen bij te houden.  

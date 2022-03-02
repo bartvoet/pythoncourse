@@ -581,7 +581,7 @@ Maar als we onderstaande zouden testen dan zouden we dit met bovenstaande code n
 (zou c is not inbetween a and b) afdrukken
 
 ~~~
-b=5 <--- c=3 ---> a=1
+a=5 <--- c=3 ---> b=1
 ~~~
 
 Daarvoor zou je volgende code moeten voor schrijven:

@@ -87,8 +87,8 @@ Hiervoor bestaan er een aantal operaties binnen de Python.
 
 #### Open en close
 
-Werken met text-files start met aanmaken van een file-object
-Dit file-object kan je aanmaken met de functie open() als volgt.  
+Werken met text-files start met aanmaken van een **file-object**
+Dit file-object kan je aanmaken met de functie **open()** als volgt.  
 
 ~~~python
 f = open("demofile.txt")
@@ -96,7 +96,7 @@ f = open("demofile.txt")
 f.close()
 ~~~
 
-Na gebruik is het belangrijk dit file-object te sluiten met de operatie close.  
+Na gebruik is het belangrijk dit **file-object** te **sluiten** met de operatie close.  
 Het operating system kan namelijk de file locken voor gebruik vanuit andere programma's zolang dit file-object open staat.
 
 #### Relatief vs absoluut
@@ -245,7 +245,7 @@ Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla conse
 
 Voor het schrijven naar een file zijn er 3 belangrijke modi die we moeten begrijpen:
 
-* Een nieuwe file schrijven  => x
+* Een nieuwe file schrijven  => x (geeft een error aan als deze al bestaat)
 * Een bestaande file overschrijven => w
 * Toevoegen aan het einde van een file => a
 
@@ -253,7 +253,6 @@ Voor het schrijven naar een file zijn er 3 belangrijke modi die we moeten begrij
 
 Het eerste scenario is dat we een nieuwe file willen aanmaken.  
 In dit geval gebruiken we de modus **x**
-* "x" - Create - maakt een file aan, en geeft een error wanneer deze file al bestaat
 
 ~~~python
 with open("hello.txt", "x") as f:
@@ -337,10 +336,10 @@ Deze lijn is toegevoegd!!!
 $
 ~~~
 
-
 ### Andere file-operaties
 
 Naast het lezen en schrijven van een file kan je ook nog andere operaties uitvoeren op files
+
 #### Deleten van files
 
 Het verwijderen van een file kan je via de functie remove.  
@@ -381,9 +380,7 @@ import os
 os.rmdir("a_folder") 
 ~~~
 
-Let wel, deze zal falen 
-
-* als de directory niet bestaat 
+* Let wel, deze zal falen als de directory niet bestaat 
 
 ~~~
 ...
@@ -395,7 +392,7 @@ FileNotFoundError: [Errno 2] No such file or directory: 'a_folder'
 
 > Om dit te vermijden kan je os.path.exists() gebruiken)
 
-* Als de directory niet leeg is
+* Als de directory niet leeg is zal je trouwens ook een error krijgen
 
 ~~~
 ...

@@ -4,41 +4,75 @@ In dit deel leggen we uit **hoe** met **web-api's** te werken vanuit als client-
 
 We doen dit via het **Requests-framework**, daaropvolgend zullen we naar de serverkant kijken via **Flask**-framework
 
-### URL
-
-Gegeven bijvoorbeeld de volgende URL: http://hypothetical.ora.com:80/
-
-Een browser interpreteert de URL as volgend:
-
-* http://  => protocol is Hypertext Transfer Protocol.
-* hypothetical.ora.com => contacteer een computer/server met dns-naam hypothetical.ora.com.
-* :80 de poort waar de server aan het luisteren is, by default is dit 80
-
-
-
-~~~~
-${protocol}://${address}:${port}/${path}
-~~~~
-
-### query-parameters
-
-
-~~~~
-${protocol}://${address}:${port}/${path}?{id}
-~~~~
-
-
-~~~~
-${protocol}://${address}:${port}/${path}?${var1}=${val1}&${var2}=${val2}
-~~~~
-
-~~~~
-https://www.google.com/search?q=flask&oq=flask&sourceid=chrome&ie=UTF-8
-~~~~
-
-
 ### HTTP
 
+**HTTP** staat voor **H**yper**t**ext **T**ransfer **P**rotocol.  
+
+Het betreft een **request-response** **netwerk**-**protocol** (client-server) gebruikt om **resources** van een server
+af te halen.
+
+~~~
+ +--------+   --request-->     +--------+   html   gif
+ | client |                    | server |   json   png
+ +--------+  <--response--     +--------+   xml    ...
+~~~
+
+HTPP behoor tot layer 7 van het **OSI**-model.  
+
+Dit zijn protocollen waar een applicatie direct met interageert.  
+
+### Browsers
+
+Een eerste vorm van applicaties zijn eerst browsers (Firefox, Chrome, ...) waarmee een gebruiker webpagina's en bijhorende resources (zoals afbeeldingen en videos) kan afhalen.  
+
+Dit gebeurt meestal via HTML-pagina's (statisch of dynamisch gegenereerd).  
+HTML is de standaard markup-taal voor web-paginas en staat voor **H**yper**T**ext **M**arkup **L**anguage
+
+Een heel éénvoudig voorbeeld vind je hieronder:
+
+~~~html
+<html>
+    <body>
+        <title>Een voorbeeld-pagina</title>
+    </body>
+    <head>
+        <h1>Een voorbeeld-pagina</h1>
+        <img src="hello.png">
+    </head>
+</html>
+~~~
+
+
+Naast het eigenlijke document zal de browser (na het parsen van het document) ook
+de bijhorende elementen (nodig voor visualisatie) zoals images en  
+
+~~~
+ +----------+                    +----------+
+ | browser  |                    |  server  |
+ | (1)      |                    |          |
+ | DOWNLOAD |   --request-->     |          |   
+ | HTML     |  GET hello.html    |          |   
+ |          |  <--response--     |          |
+ | (2)      |                    |          |
+ | ...      |                    |          |
+ | PARSING  |                    |          |
+ | HTML     |                    |          |
+ | ...      |                    |          |
+ |          |                    |          |
+ | (3)      |   --request-->     |          |
+ | DOWNLOAD |  GET hello.png     |          |
+ | IMAGE    |  <--response--     |          |
+ +----------+                    +----------+
+~~~
+
+### 
+
+Deze resources
+
+
+
+ l
+* HTTPS => 443
 
 ~~~
                 +-----------------------------------+
@@ -93,6 +127,42 @@ Content-Length: 49
 * 451 Unavailable For Legal Reasons - een website niet kan worden weergegeven vanwege juridische redenen
 * 500 Internal Server Error – De webserver heeft de gevraagde actie niet kunnen uitvoeren.
 * 503 Service Temporarily Unavailable – De webserver is tijdelijk in onderhoud.
+
+
+### URL
+
+Gegeven bijvoorbeeld de volgende URL: http://hypothetical.ora.com:80/
+
+Een browser interpreteert de URL as volgend:
+
+* http://  => protocol is Hypertext Transfer Protocol.
+* hypothetical.ora.com => contacteer een computer/server met dns-naam hypothetical.ora.com.
+* :80 de poort waar de server aan het luisteren is, by default is dit 80
+
+
+
+~~~~
+${protocol}://${address}:${port}/${path}
+~~~~
+
+### query-parameters
+
+
+~~~~
+${protocol}://${address}:${port}/${path}?{id}
+~~~~
+
+
+~~~~
+${protocol}://${address}:${port}/${path}?${var1}=${val1}&${var2}=${val2}
+~~~~
+
+~~~~
+https://www.google.com/search?q=flask&oq=flask&sourceid=chrome&ie=UTF-8
+~~~~
+
+
+
 
 
 

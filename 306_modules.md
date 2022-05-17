@@ -19,9 +19,10 @@ Herinner bijvoorbeeld de student met een naam, labo-punten en theorie-punten.
 
 ~~~python
 class Student:
-    name = ""
-    labo = 0
-    theory = 0
+    def __init__(self)
+        self.name = ""
+        self.labo = 0
+        self.theory = 0
 
 bart = Student()
 bart.labo = 16
@@ -33,9 +34,10 @@ Zo konden we bijvoorbeeld een functie average die - via de self-referentie - kon
 
 ~~~python
 class Student:
-    name = ""
-    labo = 0
-    theory = 0
+    def __init__(self)
+        self.name = ""
+        self.labo = 0
+        self.theory =
 
     def points(self):
         return self.labo / self.theory
@@ -49,8 +51,8 @@ print(bart.points()) # prints 14
 
 ### Python modules
 
-Een module zit nog een niveau hoger dan functies en objecten.  
-Een module is een geheel van klassen, functies en variabelen die logisch bij elkaar horen.  
+Een module zit nog een niveau **hoger** dan **functies** en **klassen**.  
+Een module is een **geheel/verzameling** van klassen, functies en variabelen die **logisch bij elkaar horen**.  
 
 De reden om deze te groeperen zijn divers:
 
@@ -258,7 +260,7 @@ Deze heeft dezelfde eigenschap als import (alle code wordt daar ook uitgevoerd) 
 In onderstaande uitvoering zie je 2 zaken:
 
 * Je kan de functie world() aanroepen zonder prefix
-* hello() is niet beschrikbaar
+* hello() is niet beschikbaar
 
 ~~~python
 Python 3.8.5 (default, Jan 27 2021, 15:41:15) 
@@ -297,6 +299,11 @@ hello
 ~~~
 
 ...of je gebruik \* om alle functies te importeren (met hetzelfde resultaat)
+
+> Let op:  
+> !!! Het gebruik van import \* is meestal geen goed idee
+> dit kan zorgen voor conflicten met functies of klassen
+> uit andere modules!!!
 
 ~~~python
 from hello import *

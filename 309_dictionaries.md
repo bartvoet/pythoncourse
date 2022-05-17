@@ -1,29 +1,125 @@
 
 ## Werken met dictionaries
 
-### Index binnen een lijst
+### Korte herhaling lijsten
 
-Ter herhaling, met een **lijst** konden **meerdere items** of objecten **groeperen** in **1 variabele**.  
-Het voorbeeld hieronder houdt men de **studenten-punten** bij in een **lijst**.
+#### Lijst is een verzameling
 
-~~~~python
-student_points = [12,15,16,18]
+We hebben reeds kennis gemaakt met lijsten binnen Python.  
 
-def print_points(student_id):
-    print("Student", student_id , "has" ,  student_points[student_id], "points" )
+Deze liet ons toe verschillende dataelementen te verzamelen onder 1 variabele.  
+In onderstaand voorbeeld verzamelen we bijvoorbeeld de punten van een 5-tal studenten
 
-print_points(1) #prints 12
-print_points(3) #prints 18
-~~~~
+~~~python
+punten = [20,15,16,17]
+print(f'student {0} heeft {punten[0]} punten')
+print(f'student {3} heeft {punten[3]} punten')
+~~~
+
+#### Een lijst is geindexeerd
+
+De individuele elementen kan je bereiken via een **index** (in bovenstaand voorbeeld 0 en 3) met als resultaat:
+
+~~~
+student 0 heeft 20 punten
+student 3 heeft 17 punten
+~~~
+
+Deze index kan variëren tussen **0** en **n-1** (waar n de dimensie is van deze lijst)
+
+#### Een element updaten
+
+Via deze index-operator kan je ook een element updaten...
+
+~~~python
+punten = [20,15,16,17]
+punten[0]=18
+print(f'student {0} heeft {punten[0]} punten')
+~~~
+
+met als resultaat
+
+~~~
+student 0 heeft 18 punten
+~~~
+
+#### Een element toevoegen
+
+Toevoegen kan via de append-methode
+
+~~~python
+punten = [20,15,16,17]
+print(punten)
+punten.append(19)
+print(punten)
+~~~
+
+met als resultaat
+
+~~~
+[18, 15, 16, 17]
+[18, 15, 16, 17, 19]
+~~~
+
+#### for-loop
+
+We konden ook gemakkelijk door een lijst "loopen" met een for-loop
+
+~~~python
+punten = [18, 15, 16, 17]
+for punt in studenten:
+  print(f'student heeft {punt} punten')
+~~~
+
+met als resultaat:
+
+~~~
+student heeft 18 punten
+student heeft 15 punten
+student heeft 16 punten
+student heeft 17 punten
+~~~
+
+#### for-loop met enumerate
+
+Dikwijls will je ook de index naast dev value...
+
+~~~python
+i = 0
+for punt in punten:
+  print(f'student {i} heeft {punt} punten')
+  i = i + 0
+~~~
+
+met als resultaat
+
+~~~
+student 0 heeft 18 punten
+student 1 heeft 15 punten
+student 2 heeft 16 punten
+student 3 heeft 17 punten
+~~~
+
+Gezien dit zeer veel gebruikt binnen programmeren heeft Python de enumerate-functie toegevoegd.  
+Deze zorgt er voor dat je naast elk element ook nog de index kan opvragen.
+
+~~~python
+for i, punt in enumerate(punten):
+  print(f'student {i} heeft {punt} punten')
+~~~
+
+> De toekenning van 2 variabelen noemt unpacking  
+> We komen hier nog later toe binnen de cursus als we tuples bekijken.
 
 ### Dictionaries => key en value
 
-In dit geval is de **sleutel** hier de **index** van deze lijst, maar wat als je bijvoorbeeld **namen** wil **mappen** aan deze **punten**, dat zou het gemakkelijker maken om met te werken (dan moet je de id's niet onthouden).  
+Bij een lijst gebruikten de index als **sleutel** om een element op te vragen...  
+In geval van studenten zou het bijvoorbeeld natuurlijker zijn de namen van de studenten te gebruiken om deze mapping uit te voeren (dan moet je de id's niet onthouden).  
 
 Hiervoor bestaan **dictionaries** (equivalent in Java is de Map).  
 Dit zijn - net zoals lijsten - **datastructuren** waar je **meerdere objecten of items** kan aan toevoegen.  
-Het verschil echter is dat elke **waarde** die je toevoegt vergezeld moet zijn van een **sleutel**.  
 
+Het verschil echter is dat elke **waarde** die je toevoegt vergezeld moet zijn van een **sleutel**.  
 Deze gebruik je dan nadien om deze waardes op te halen zoals gedemonstreerd in onderstaande code:
 
 ~~~python
@@ -111,7 +207,7 @@ $python3 dictionary_demo.py
 {'Jan': 12, 'Piet': 15, 'Joris': 16, 'Korneel': 18, 'Bart': 12}
 ~~~
 
-### Waarde update aan een dictionary
+### Waarde updaten binnen een dictionary
 
 Je kan naast het **toevoegen** ook dezelfde waarde **updaten**.
 
@@ -192,7 +288,7 @@ KeyError: 'Hans'
 Python dictionaries vereisen dat je correcte sleutels doorgeeft, als je dit niet doet zal deze een error opgeven.  
 Hoe kan je dit vermijden?
 
-### Nakijken of een dictionary bestaat
+### Nakijken of een entry binnen de dictionary bestaat
 
 Om zulke situaties te vermijden heb je 2 opties.  
 Ofwel vang je deze error op via een **try-except-constructie**

@@ -57,9 +57,10 @@ PY_CHAPTER_03 += 302_databases_sqlite_intro.md
 PY_CHAPTER_03 += 303_databases_sql_intro.md
 PY_CHAPTER_03 += 304_python_en_sql.md
 PY_CHAPTER_03 += 306_modules.md
+PY_CHAPTER_03 += 306_part_four_apis.md
 PY_CHAPTER_03 += 309_dictionaries.md
+PY_CHAPTER_03 += 307_http_and_rest.md
 PY_CHAPTER_03 += 305_flask.md
-PY_CHAPTER_03 += 307_requests.md
 
 PY_ANNEX += annex.md
 PY_ANNEX += pandoc_page_break.txt

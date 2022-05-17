@@ -881,3 +881,226 @@ def save_new_student(student, group_name):
         [student.name,student.lab_points,student.theory_points,group_name])
         con.commit()
 ~~~
+
+### Opdracht Sensordatabase (deel 2)
+
+Deze oefening is een vervolg op een voorgaande opdracht waar
+we reeds 2 tabellen probeerden te maken.
+
+We maken eenvoudige command-line applicatie die sensor- een meet-informatie
+kan opslagen in een SQLite-database.
+
+Hiervoor starten we vanuit onderstaande code.  
+Het is de bedoeling dat je de TODO's aanvult...
+
+#### Startcode
+
+~~~python
+import sqlite3 as sl
+import datetime as dt
+
+SENSORS_DB_FILE_NAME = "sensors.db"
+
+def init_database():
+    con = sl.connect(SENSORS_DB_FILE_NAME)
+    with con:
+        con.executescript("""
+            CREATE TABLE IF NOT EXISTS sensor (
+                sensor_name text,
+                sensor_type text
+            );
+
+            CREATE TABLE IF NOT EXISTS sensor_measurement (
+                sensor_id_fk references sensor,
+                measurement integer,
+                measurement_time text
+            );
+        """)
+
+init_database()
+
+menu = """
+Kies opties:
+    1. Voeg sensor toe
+    2. Lijst sensoren
+    3. Voeg meting toe
+    4. Lijst metingen
+    5. Sluit af
+(type het getal overeenkomstig met je keuze)
+"""
+
+class Sensor:
+    def __init__(self, name, type):
+        self.name = name
+        self.type = type
+
+class SensorMeasurement:
+    def __init__(self, time, value):
+        self.time = time
+        self.value = value
+
+def add_sensor(id, sensor_type):
+    # TODO: Voeg een sensor toe in de database
+    pass
+
+def get_sensors():
+    # TODO: Haal een lijst van sensoren op uit de database
+    return []
+
+def add_measurement(sensor, moment, value):
+    # TODO: Voeg een sensor-meting toe
+
+def get_sensor_measurements(sensor):
+    # TODO: Vraag een lijst van metingen op
+
+if __name__ == '__main__':
+    while True:
+        read = input(menu)
+        read = read.strip()
+        if read == "1":
+            sensor_name = input("Geen sensor-naam: ")
+            sensor_type = input("Geef het type van sensor: ")
+            add_sensor(sensor_name, sensor_type)
+        elif read == "2":
+            for sensor in get_sensors():
+                print("Sensor met naam", sensor.name, "van het type", sensor.type)
+        elif read == "3":
+            sensor = input("Geen sensor-naam: ")
+            moment = dt.datetime.now()
+            sensor_value = int(input("Geef waarde: "))
+            add_measurement(sensor, moment, sensor_value)
+        elif read == "4":
+            sensor = input("Geef de sensor-id: ")
+            for measurement in get_sensor_measurements(sensor):
+                print("Op", measurement.value , " werd gemeten ", measurement.time)
+        elif read == "5":
+            print("De applicatie sluit af")
+            break
+        else:
+            print(read ,"is geen geldige keuze")
+
+~~~
+
+#### Demo
+
+Hieronder zie je een voorbeeld van gebruik van de applicatie.
+
+##### Optie 1: sensor toevoegen
+
+Optie 1 geeft je de mogelijkheid om een sensor toe te voegen.  
+In onderstaand voorbeeld voegen we een vocht- en druk-sensor toe.
+
+~~~
+Kies opties:
+    1. Voeg sensor toe
+    2. Lijst sensoren
+    3. Voeg meting toe
+    4. Lijst metingen
+    5. Sluit af
+(type het getal overeenkomstig met je keuze)
+1
+Geen sensor-naam: A1
+Geef het type van sensor: vocht
+
+Kies opties:
+    1. Voeg sensor toe
+    2. Lijst sensoren
+    3. Voeg meting toe
+    4. Lijst metingen
+    5. Sluit af
+(type het getal overeenkomstig met je keuze)
+1
+Geen sensor-naam: A2
+Geef het type van sensor: Druk
+~~~
+
+##### Optie 2: lijst van de sensoren
+
+Optie 2 zorgt er voor dat je deze sensoren kan oplijsten...
+
+~~~
+Kies opties:
+    1. Voeg sensor toe
+    2. Lijst sensoren
+    3. Voeg meting toe
+    4. Lijst metingen
+    5. Sluit af
+(type het getal overeenkomstig met je keuze)
+2
+Sensor met naam A1 van het type vocht
+Sensor met naam A2 van het type Druk
+~~~
+
+##### Optie 3: Sensor-meting toevoegen
+
+Vervolgens kunnen we via optie 3 metingen toevoegen
+
+~~~
+Kies opties:
+    1. Voeg sensor toe
+    2. Lijst sensoren
+    3. Voeg meting toe
+    4. Lijst metingen
+    5. Sluit af
+(type het getal overeenkomstig met je keuze)
+3
+Geen sensor-naam: A1
+Geef waarde: 100
+
+Kies opties:
+    1. Voeg sensor toe
+    2. Lijst sensoren
+    3. Voeg meting toe
+    4. Lijst metingen
+    5. Sluit af
+(type het getal overeenkomstig met je keuze)
+3
+Geen sensor-naam: A1
+Geef waarde: 150
+
+Kies opties:
+    1. Voeg sensor toe
+    2. Lijst sensoren
+    3. Voeg meting toe
+    4. Lijst metingen
+    5. Sluit af
+(type het getal overeenkomstig met je keuze)
+3
+Geen sensor-naam: A2
+Geef waarde: 64
+~~~
+
+##### Optie 4: Sensor-metingen opvragen
+
+De eerder ingegeven sensorwaardes kunnen we uiteindelijk oplijsten.  
+Als input dien je hier wel de sensor
+
+~~~
+Kies opties:
+    1. Voeg sensor toe
+    2. Lijst sensoren
+    3. Voeg meting toe
+    4. Lijst metingen
+    5. Sluit af
+(type het getal overeenkomstig met je keuze)
+4
+Geef de sensor-id: A1
+Op 2022-04-13 22:45:38.335312 werd gemeten 100
+Op 2022-04-13 22:46:01.097266 werd gemeten 150
+~~~
+
+##### Optie 5: Afsluiten van de applicatie
+
+Ten slotte ga je deze applicatie afsluiten met optie 5
+
+~~~
+Kies opties:
+    1. Voeg sensor toe
+    2. Lijst sensoren
+    3. Voeg meting toe
+    4. Lijst metingen
+    5. Sluit af
+(type het getal overeenkomstig met je keuze)
+5
+De applicatie sluit af
+~~~

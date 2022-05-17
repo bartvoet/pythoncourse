@@ -1,4 +1,4 @@
-# Deel 3 - Programmeren met data
+# Deel 3 - Databases
 
 In de vorige hoofdstukken focusten we op de basis van het programmeren zelf.
 
@@ -7,9 +7,8 @@ In de vorige hoofdstukken focusten we op de basis van het programmeren zelf.
 * We werkten met lijsten die konden groter worden met de duurtijd van je programma
 * We werkten met klassen en object waarmee we gestructureerde data konden bijhouden
 
-In dit deel gaan we ons focussen op het verwerken van deze data:
+In dit deel gaan we ons focussen op het verwerken van deze data.  
+In daarop volgende hoofdstukken focussen we dan 
 
-* Opslaan van data
-* Uitwisselen van data
-* Visualiseren van data
-
+* Uitwisselen van data via API'S
+* Analyseren Visualiseren van data (Matplotlib, Numpy en Pandas)

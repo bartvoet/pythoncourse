@@ -1,4 +1,10 @@
-## Werken met Flask
+## Van HTTP naar REST met Flask
+
+De technologie om Web-pagina's te laden wordt dus ook gebruikt om programma's met elkaar te laten praten.  
+Hoe gaat we dit nu realiseren met Python?   
+
+* **Requests** => een python-library om API's aan te roepen (client)
+* 
 
 ### Installatie
 

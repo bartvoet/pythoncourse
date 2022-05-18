@@ -640,4 +640,161 @@ Voor het type list...
 >>> 
 ~~~
 
-Bemerk ook in bovenstaande code dat deze dir-functie ook kan toepassen op een object van het type zelf...
+### PIP en PyPi
+
+Een groot deel van programmeren is leren herbruiken van bestaande code.  
+We hebben net gezien hoe je code kan afzonderen in aparte files en herbruiken om deze functionaliteit te isoleren en eventueel te herbruiken in verschillende applicaties.  
+
+Om code te herbruiken van andere ontwikkelaars (over heel de wereld) hebben veel programmeeromgevingen het concept van packagemanagers.  
+Dit zijn tools die in staat zijn andere modules (en eventuele dependencies) automatisch te downloaden zoals bijvoorbeeld:
+
+* Maven in Java
+* Nuget in C#
+* NPM in Javascript
+* ...
+
+In Python is dit **pip** (acrononiem voor **p**ip **i**nstalls **p**ackages), een tool die standaard wordt **meegeleverd** met **Python** (toch vanaf versie 3.4)
+
+PIP gaat typisch modules downloaden over het internet, hiervoor werkt het standaard samen met Python Package Index, ook wel bekend als PyPI (spreek uit als Pie Pea Eye).
+
+Deze website bevindt zich te https://pypi.org/
+
+PyPI is een webservice die een een uitgebreide verzameling packages (frameworks, tools en libraries) host.  
+De vind je te 
+2 van deze libraries (Flask en request) 
+
+Om een package te installeren gebruik je het commando "pip install" gevolgd door de libra
+
+~~~
+[student@fedora ~]$ pip install requests
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: requests in /usr/lib/python3.10/site-packages (2.27.1)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3.10/site-packages (from requests) (3.2)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /usr/lib/python3.10/site-packages (from requests) (1.26.7)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /usr/lib/python3.10/site-packages (from requests) (2.0.4)
+~~~
+
+
+~~~
+[student@fedora ~]$ pip install flask
+Defaulting to user installation because normal site-packages is not writeable
+Collecting flask
+  Downloading Flask-2.1.2-py3-none-any.whl (95 kB)
+     |████████████████████████████████| 95 kB 549 kB/s 
+Collecting itsdangerous>=2.0
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Requirement already satisfied: click>=8.0 in /usr/lib/python3.10/site-packages (from flask) (8.0.1)
+Collecting Jinja2>=3.0
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+     |████████████████████████████████| 133 kB 52.5 MB/s 
+Collecting Werkzeug>=2.0
+  Downloading Werkzeug-2.1.2-py3-none-any.whl (224 kB)
+     |████████████████████████████████| 224 kB 3.8 MB/s 
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/lib64/python3.10/site-packages (from Jinja2>=3.0->flask) (2.0.0)
+Installing collected packages: Werkzeug, Jinja2, itsdangerous, flask
+Successfully installed Jinja2-3.1.2 Werkzeug-2.1.2 flask-2.1.2 itsdangerous-2.1.2
+[student@fedora ~]$ 
+~~~
+
+
+~~~
+[student@fedora ~]$ pip install serial pandas
+Defaulting to user installation because normal site-packages is not writeable
+Collecting serial
+  Downloading serial-0.0.97-py2.py3-none-any.whl (40 kB)
+     |████████████████████████████████| 40 kB 2.7 MB/s 
+Collecting pandas
+  Downloading pandas-1.4.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.7 MB)
+     |████████████████████████████████| 11.7 MB 2.9 MB/s 
+Collecting future>=0.17.1
+  Downloading future-0.18.2.tar.gz (829 kB)
+     |████████████████████████████████| 829 kB 13.4 MB/s 
+Collecting iso8601>=0.1.12
+  Downloading iso8601-1.0.2-py3-none-any.whl (9.7 kB)
+Collecting pyyaml>=3.13
+  Downloading PyYAML-6.0-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (682 kB)
+     |████████████████████████████████| 682 kB 20.7 MB/s 
+Collecting pytz>=2020.1
+  Downloading pytz-2022.1-py2.py3-none-any.whl (503 kB)
+     |████████████████████████████████| 503 kB 21.5 MB/s 
+Requirement already satisfied: python-dateutil>=2.8.1 in /usr/lib/python3.10/site-packages (from pandas) (2.8.1)
+Collecting numpy>=1.21.0
+  Downloading numpy-1.22.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+     |████████████████████████████████| 16.8 MB 101.6 MB/s 
+Requirement already satisfied: six>=1.5 in /usr/lib/python3.10/site-packages (from python-dateutil>=2.8.1->pandas) (1.16.0)
+Using legacy 'setup.py install' for future, since package 'wheel' is not installed.
+Installing collected packages: pyyaml, pytz, numpy, iso8601, future, serial, pandas
+    Running setup.py install for future ... done
+Successfully installed future-0.18.2 iso8601-1.0.2 numpy-1.22.3 pandas-1.4.2 pytz-2022.1 pyyaml-6.0 serial-0.0.97
+[student@fedora ~]$ 
+~~~
+
+
+~~~
+student@fedora ~]$ pip list 
+Package            Version
+------------------ ---------
+argcomplete        1.12.3
+Beaker             1.10.0
+beautifulsoup4     4.11.0
+...
+fedora-third-party 0.8
+Flask              2.1.2
+fros               1.1
+gpg                1.15.1
+...
+regex              2022.3.15
+requests           2.27.1
+requests-file      1.5.1
+requests-ftp       0.3.1
+...
+urllib3            1.26.7
+Werkzeug           2.1.2
+[student@fedora ~]$ 
+~~~
+
+~~~
+[student@fedora ~]$ python
+Python 3.10.4 (main, Mar 25 2022, 00:00:00) [GCC 11.2.1 20220127 (Red Hat 11.2.1-9)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import requests
+>>> requests.__version__
+'2.27.1'
+>>> import Flask
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'Flask'
+>>> import flask
+>>> flask.__version__
+'2.1.2'
+>>> 
+~~~
+
+
+~~~
+[student@fedora ~]$ pip show flask
+Name: Flask
+Version: 2.1.2
+Summary: A simple framework for building complex web applications.
+Home-page: https://palletsprojects.com/p/flask
+Author: Armin Ronacher
+Author-email: armin.ronacher@active-4.com
+License: BSD-3-Clause
+Location: /home/student/.local/lib/python3.10/site-packages
+Requires: click, itsdangerous, Jinja2, Werkzeug
+Required-by: 
+[student@fedora ~]$
+~~~
+
+~~~
+[student@fedora ~]$ pip uninstall flask
+Found existing installation: Flask 2.1.2
+Uninstalling Flask-2.1.2:
+  Would remove:
+    /home/student/.local/bin/flask
+    /home/student/.local/lib/python3.10/site-packages/Flask-2.1.2.dist-info/*
+    /home/student/.local/lib/python3.10/site-packages/flask/*
+Proceed (Y/n)? Y
+  Successfully uninstalled Flask-2.1.2
+[student@fedora ~]$ 
+~~~

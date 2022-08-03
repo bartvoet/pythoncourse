@@ -2,16 +2,10 @@
 
 Om 
 
-### Installatie
-
-Vooraleer aan de uitleg te starten laten even starten met het instaleren van Flask, het framework dat we gaan gebruiken om te communiceren over http.  
-Normaal gezien is pip reeds voorgeinstalleerd bij installatie van Python.
-
-pip stelt je de package-installer voor Python. pip of **p**ackage **i**nstaller for **P**ython.
-Je kan pip gebruiken om packages te installeren die je kan terugvinden in de Python Package Index (en andere)
+### Installatie/voorbereiding
 
 ~~~
-$ pip install Flask
+$ pip install Flask  request
 ~~~
 
 ### Eerste programma
